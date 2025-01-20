@@ -1,6 +1,6 @@
 # provider variable
 
-/*variable "role_arn" {
+variable "role_arn" {
   type        = string
   description = "AWS Event Role arn"
 }
@@ -9,12 +9,12 @@
 variable "external_id" {
   type        = string
   description = "AWS event role external id"
-} */
+} 
 
-variable "profile" {
+/*variable "profile" {
   type        = string
-  description = "AWS Event Role arn"
-}
+  description = "AWS profile to login"
+} */
 
 variable "region" {
   type        = string
@@ -58,3 +58,4 @@ variable "write_capacity" {
   description = "Number of write units for this table. If the billing_mode is PROVISIONED, this field is required."
   default     = 10
 }
+
