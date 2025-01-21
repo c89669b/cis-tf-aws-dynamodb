@@ -21,8 +21,6 @@ resource "aws_dynamodb_table" "dynamodb-table" {
     attribute_name = "TimeToExist"
     enabled        = true
   }  
-  read_capacity = var.read_capacity
-  write_capacity = var.write_capacity
-
-  tags = local.tags
+  
+   tags = local.tags
 }
