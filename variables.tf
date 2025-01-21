@@ -1,10 +1,13 @@
 # provider variable
+variable "region" {
+  type        = string
+  description = "AWS region"
+}
 
 variable "role_arn" {
   type        = string
   description = "AWS Event Role arn"
 }
-
 
 variable "external_id" {
   type        = string
@@ -16,11 +19,6 @@ variable "external_id" {
   description = "AWS profile to login"
 } */
 
-variable "region" {
-  type        = string
-  description = "AWS region"
-
-}
 
 variable "environment" {
   type = string
@@ -46,16 +44,3 @@ variable "billing_mode" {
   EOF
   default     = "PAY_PER_REQUEST"
 }
-
-variable "read_capacity" {
-  type        = number
-  description = "Number of read units for this table. If the billing_mode is PROVISIONED, this field is required."
-  default     = 10
-}
-
-variable "write_capacity" {
-  type        = number
-  description = "Number of write units for this table. If the billing_mode is PROVISIONED, this field is required."
-  default     = 10
-}
-
