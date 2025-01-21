@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_dynamodb_table" "dynamodb-table" {
-  name         = "${var.table_name}-${var.environment}"
+  name         = var.table_name
   billing_mode = var.billing_mode
   hash_key     = var.hash_key
   attribute {
@@ -20,7 +20,9 @@ resource "aws_dynamodb_table" "dynamodb-table" {
   ttl {
     attribute_name = "TimeToExist"
     enabled        = true
-  }
+  }  
+  read_capacity = var.read_capacity
+  write_capacity = var.write_capacity
 
   tags = local.tags
 }
